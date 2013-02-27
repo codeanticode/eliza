@@ -299,24 +299,26 @@ ${line}
 	<target name="generate.zip" if="is.normal">
 		<!-- zip the distribution of the library -->
 		
-		<move todir="${project.dist.version}/tmp/${project.name}-${library.version}">
+		<move todir="${project.dist.version}/tmp/${project.name}">
   			<fileset dir="${project.dist.version}/${project.name}" />
   		</move>
   		
-  		<copy file="${project.dist.version}/tmp/${project.name}-${library.version}/library.properties" tofile="${project.dist.version}/web/download/${project.name}-${library.version}.txt" />
-		<copy file="${project.dist.version}/tmp/${project.name}-${library.version}/library.properties" tofile="${project.dist.version}/web/download/${project.name}.txt" />
+  		<copy file="${project.dist.version}/tmp/${project.name}/library.properties" tofile="${project.dist.version}/web/download/${project.name}.txt" />
 		        
-		<zip destfile="${project.dist.version}/${project.name}-${library.version}.zip"
-  	       basedir="${project.dist.version}/tmp/${project.name}-${library.version}"
+		<zip destfile="${project.dist.version}/${project.name}.zip"
+  	       basedir="${project.dist.version}/tmp"
   	       excludes="**/.DS_Store"
 		/>
 		
-        <move file="${project.dist.version}/${project.name}-${library.version}.zip" todir="${project.dist.version}/web/download" />
-		<copy file="${project.dist.version}/web/download/${project.name}-${library.version}.zip" tofile="${project.dist.version}/web/download/${project.name}.zip" />
+        <move file="${project.dist.version}/${project.name}.zip" todir="${project.dist.version}/web/download" />
+		
+		<copy file="${project.dist.version}/web/download/${project.name}.zip" tofile="${project.dist.version}/web/download/${project.name}-${library.version}.zip" />
+		<copy file="${project.dist.version}/web/download/${project.name}.txt" tofile="${project.dist.version}/web/download/${project.name}-${library.version}.txt" />
 		
 		<move todir="${project.dist.version}">
 			<fileset dir="${project.dist.version}/web" />
 		</move>
+		
 		<delete dir="${project.dist.version}/tmp" />
 	</target>
 	
