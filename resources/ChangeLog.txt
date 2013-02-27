@@ -1,3 +1,7 @@
+2013-02-26  Elie Zananiri
+      * version 0.4.9
+      * updated zip script to use the correct folder structure
+      
 2012-10-05  Elie Zananiri
       * version 0.4.8
       * updated default classpath on OS X
