@@ -1,3 +1,8 @@
+2013-07-08  Elie Zananiri
+      * version 0.5.2
+      * added a "project.prettyVersion" field to build.properties, to allow names with spaces
+      * fixed bug in the "copyToSketchbook" Ant target 
+      
 2013-04-26  Elie Zananiri
       * version 0.5.1
       * updated wiki links 
