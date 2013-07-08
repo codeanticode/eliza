@@ -265,7 +265,7 @@ ${line}
     	<replaceregexp file="${file}" match="##author.name##" replace="${author.name}" flags="g" />
     	<replaceregexp file="${file}" match="##author.url##" replace="${author.url}" flags="g" />
     	        
-    	<replaceregexp file="${file}" match="##library.name##" replace="${project.name}" flags="g" />
+    	<replaceregexp file="${file}" match="##library.name##" replace="${project.prettyName}" flags="g" />
     	<replaceregexp file="${file}" match="##project.name##" replace="${project.name}" flags="g" />
     	        
         <replaceregexp file="${file}" match="##library.version##" replace="${library.version}" flags="g" />
