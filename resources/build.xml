@@ -107,8 +107,8 @@ ${line}
 		<antcall target="compile" />
 	  	<antcall target="generate.jar"><param name="folder" value="library"/></antcall>
 	  	<antcall target="generate.javadoc" />
-		<antcall target="copyToSketchbook"><param name="folder" value="libraries"/></antcall>
 		<antcall target="generate.libprops" />
+		<antcall target="copyToSketchbook"><param name="folder" value="libraries"/></antcall>
 		<antcall target="generate.distribution" />
 		<antcall target="generate.install.library" />
 		<antcall target="generate.web" />
