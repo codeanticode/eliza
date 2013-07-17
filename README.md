@@ -1,4 +1,31 @@
-The following describe how to set up a Processing library project in Eclipse and build it successfully, and to make your library ready for distribution.
+The following describes how to set up a Processing library project in Eclipse and build it successfully, and to make your library ready for distribution.
+
+## Import to Eclipse
+
+There are two options to import the template project into Eclipse: using a Git [fork](https://help.github.com/articles/fork-a-repo) or using a downloaded package. If you are not familiar with Git or GitHub, you should opt for the downloaded package.
+
+### Option A: GitHub
+
+1. Fork the template repository to use as a starting point.
+  * Navigate to https://github.com/prisonerjohn/processing-library-template in your browser.
+  * Click the "Fork" button in the top-right of the page.
+  * Once your fork is ready, open the new repository's "Settings" by clicking the link in the menu bar on the right.
+  * Change the repository name to the name of your library and save your changes.
+1. Clone your new repository to your Eclipse workspace.
+  * Open Eclipse and select the File → Import... menu item.
+  * Select Git → Projects from Git, and click "Next >".
+  * Select "URI" and click "Next >". 
+  * Enter your repository's clone URL in the "URI" field. The remaining fields in the "Location" and "Connection" groups will get automatically filled in.
+  * Enter your GitHub credentials in the "Authentication" group, and click "Next >".
+  * Select the `master` branch on the next screen, and click "Next >".
+  * The default settings on the "Local Configuration" screen should work fine, click "Next >".
+  * Make sure "Import existing projects" is selected, and click "Next >".
+  * Eclipse should find and select the `processing-library-template` automatically, click "Finish".
+1. Rename your Eclipse project.
+  * In the Package Explorer, right-click (ctrl-click) on the folder icon of the `processing-library-template` project, and select Refacator → Rename... from the menu that pops up. 
+  * Give the project the name of your library, and click "OK".
+  
+### Option B: Downloaded Package
 
 1. Download the latest Eclipse template from [here](http://code.google.com/p/processing/downloads/list). **Don't unzip the ZIP file yet.**
 1. Create a new Java project in Eclipse. 
@@ -6,9 +33,12 @@ The following describe how to set up a Processing library project in Eclipse and
   * Give the project the name of your library. 
   * Click "Finish".
 1. Import the template source files.
-  * Right-click (ctrl-click) onto the folder icon of your newly created project in the "Package Explorer" and choose "Import" from the menu that pops up. 
-  * Select General → Archive File, click "Next" and navigate to the ZIP file you downloaded earlier in step 1. 
-  * Confirm the archive with "Finish".
+  * Right-click (ctrl-click) onto the folder icon of your newly created project in the Package Explorer and select "Import..." from the menu that pops up. 
+  * Select General → Archive File, and click "Next >".
+  * Navigate to the ZIP file you downloaded earlier in step 1, and click "Finish".
+
+## Set Up and Compile
+
 1. Add Processing to the project build path.
   * Open your project's "Properties" window. 
   * Under "Java Build Path", select the "Libraries" tab and then "Add External JARs...". 
@@ -29,7 +59,7 @@ The following describe how to set up a Processing library project in Eclipse and
 
 After having compiled and built your project successfully, you should be able to find your library in Processing's sketchbook folder, examples will be listed in Processing's sketchbook menu. Files that have been created for the distribution of the library are located in your Eclipse's `workspace/yourProject/distribution` folder. In there you will also find the `web` folder which contains the documentation, a ZIP file for downloading your library, a folder with examples as well as the `index.html` and CSS file.
 
-To distribute your library please refer to the LibraryGuidelines.
+To distribute your library please refer to the [Library Guidelines](https://github.com/processing/processing/wiki/Library-Guidelines).
 
 ## Source code
 
