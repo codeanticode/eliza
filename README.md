@@ -22,7 +22,7 @@ There are two options to import the template project into Eclipse: using a Git [
   * Make sure "Import existing projects" is selected, and click "Next >".
   * Eclipse should find and select the `processing-library-template` automatically, click "Finish".
 1. Rename your Eclipse project.
-  * In the Package Explorer, right-click (ctrl-click) on the folder icon of the `processing-library-template` project, and select Refacator → Rename... from the menu that pops up. 
+  * In the Package Explorer, right-click (ctrl-click) on the folder icon of the `processing-library-template` project, and select Refactor → Rename... from the menu that pops up. 
   * Give the project the name of your library, and click "OK".
   
 ### Option B: Downloaded Package
@@ -45,16 +45,16 @@ There are two options to import the template project into Eclipse: using a Git [
   * Locate and add Processing's `core.jar` to your build path. It is recommended that a copy of `core.jar` is located in your Eclipse workspace in a `libs` folder. If the `libs` folder does not exist yet, create it. Read the [section below](#AddingJARs) regarding where to find the `core.jar` file.
   * Confirm the setup with "OK".
 1. Edit the library properties.
-  * Open the `resources` folder inside of your Java project and double-click the `build.properties` file. You should see its content in the Eclipse editor. 
-  * Edit the properties file, making changes to items 1-4 so that the values and paths are properly set for your project to compile. A path can be a relative path or absolute. 
+  * Open the `resources` folder inside of your Java project and double-click the `build.properties` file. You should see its contents in the Eclipse editor. 
+  * Edit the properties file, making changes to items 1-4 so that the values and paths are properly set for your project to compile. A path can be relative or absolute.
   * Make changes to items under 5. These are metadata used in the automatically generated HTML, README, and properties documents.
 1. Compile your library using Ant.
   * From the menu bar, choose Window → Show View → Ant. A tab with the title "Ant" will pop up on the right side of your Eclipse editor. 
   * Drag the `resources/build.xml` file in there, and a new item "ProcessingLibs" will appear. 
   * Press the "Play" button inside the "Ant" tab.
-1. BUILD SUCCESSFUL. The library template will start to compile, control-messages will appear in the console window, warnings can be ignored. When finished it should say BUILD SUCCESSFUL. Congratulations, you are set and you can start writing your own library by making changes to the source code in folder `src`.
+1. BUILD SUCCESSFUL. The library template will start to compile, control messages will appear in the console window, warnings can be ignored. When finished it should say BUILD SUCCESSFUL. Congratulations, you are set and you can start writing your own library by making changes to the source code in folder `src`.
 1. BUILD FAILED. In case the compile process fails, check the output in the console which will give you a closer idea of what went wrong. Errors may have been caused by
-  * Incorrect path settings in the `build.xml` file.
+  * Incorrect path settings in the `build.properties` file.
   * Error "Javadoc failed". if you are on Windows, make sure you are using a JDK instead of a JRE in order to be able to create the Javadoc for your library. JRE does not come with the Javadoc application, but it is required to create libraries from this template.
 
 After having compiled and built your project successfully, you should be able to find your library in Processing's sketchbook folder, examples will be listed in Processing's sketchbook menu. Files that have been created for the distribution of the library are located in your Eclipse's `workspace/yourProject/distribution` folder. In there you will also find the `web` folder which contains the documentation, a ZIP file for downloading your library, a folder with examples as well as the `index.html` and CSS file.
@@ -63,7 +63,7 @@ To distribute your library please refer to the [Library Guidelines](https://gith
 
 ## Source code
 
-If you want to share your library's source code, we recommend to use an online repository available for free at [Google Code] (http://code.google.com) or [GitHub](https://github.com/).
+If you want to share your library's source code, we recommend using an online repository available for free at [Google Code] (http://code.google.com) or [GitHub](https://github.com/).
 
 ## <a name='AddingJARs'/>Adding core.jar and other .jar files to your classpath</a>
 
