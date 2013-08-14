@@ -7,7 +7,7 @@ There are two options to import the template project into Eclipse: using a Git [
 ### Option A: GitHub
 
 1. Fork the template repository to use as a starting point.
-  * Navigate to https://github.com/prisonerjohn/processing-library-template in your browser.
+  * Navigate to https://github.com/processing/processing-library-template in your browser.
   * Click the "Fork" button in the top-right of the page.
   * Once your fork is ready, open the new repository's "Settings" by clicking the link in the menu bar on the right.
   * Change the repository name to the name of your library and save your changes.
@@ -27,7 +27,7 @@ There are two options to import the template project into Eclipse: using a Git [
   
 ### Option B: Downloaded Package
 
-1. Download the latest Eclipse template from [here](http://code.google.com/p/processing/downloads/list). **Don't unzip the ZIP file yet.**
+1. Download the latest Eclipse template from [here](https://github.com/processing/processing-library-template/releases). **Don't unzip the ZIP file yet.**
 1. Create a new Java project in Eclipse. 
   * From the menubar choose File → New → Java Project. 
   * Give the project the name of your library. 
