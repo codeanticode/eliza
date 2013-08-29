@@ -11,6 +11,7 @@ There are two options to import the template project into Eclipse: using a Git [
   * Click the "Fork" button in the top-right of the page.
   * Once your fork is ready, open the new repository's "Settings" by clicking the link in the menu bar on the right.
   * Change the repository name to the name of your library and save your changes.
+  * NOTE: GitHub only allows you to fork a project once. If you need to create multiple forks, you can follow these [instructions](http://adrianshort.org/2011/11/08/create-multiple-forks-of-a-github-repo/).
 1. Clone your new repository to your Eclipse workspace.
   * Open Eclipse and select the File → Import... menu item.
   * Select Git → Projects from Git, and click "Next >".
