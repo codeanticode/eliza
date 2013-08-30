@@ -1,5 +1,5 @@
 This is a Processing library based on the Java implementation of the Eliza program by Charles Hayden.
-Hayden's code is a complete and faithful implementation of the original program described by by Joseph Weizenbaum in Communications of the ACM in January 1966.
+Hayden's code is a complete and faithful implementation of the original program described by Joseph Weizenbaum in the <a href="http://www.cse.buffalo.edu/~rapaport/572/S02/weizenbaum.eliza.1966.pdf">Communications of the ACM in January 1966</a>.
 
 ACKNOWLEDGMENTS
 
