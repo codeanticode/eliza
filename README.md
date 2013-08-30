@@ -32,7 +32,7 @@ eliza.readScript(“http://chayden.net/eliza/script");
 
 To go back to the default script that is loaded when Eliza is initialized, call the readDefaultScript() function.
 
-For detailed instructions on how to modify the script file that determines how Eliza constructs the answers, check the following notes by Charles Hayden:  
+For detailed instructions on how to modify the script file that determines Eliza's "behavior", read the following notes by Charles Hayden:  
 http://chayden.net/eliza/instructions.txt
 
 FURTHER REFERENCES
