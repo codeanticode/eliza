@@ -19,15 +19,15 @@ import codeanticode.eliza.*;
 Eliza eliza;
 eliza = new Eliza(this);
 
-String response = eliza.processInput(“Hello”);
+String response = eliza.processInput("Hello");
 println(response);
 ```
 
 You can use the readScript() function to change the script that Eliza uses to construct its answers:
 
 ```java
-eliza.readScript(“script”);
-eliza.readScript(“http://chayden.net/eliza/script");
+eliza.readScript("script");
+eliza.readScript("http://chayden.net/eliza/script");
 ```
 
 To go back to the default script that is loaded when Eliza is initialized, call the readDefaultScript() function.
