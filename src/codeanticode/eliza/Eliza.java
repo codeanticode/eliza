@@ -169,9 +169,6 @@ public class Eliza {
 
 	public boolean readDefaultScript()	{
 		clearScript();
-
-		URL url = this.getClass().getResource("eliza.script");
-		System.out.println(url);
 		
 		/*
     // Returns the URL of the resource file inside the location in the jar

@@ -1,4 +1,4 @@
-<project name="eliza" default="clean" basedir="../">
+<project name="Eliza" default="clean" basedir="../">
 
     
 <!--	
