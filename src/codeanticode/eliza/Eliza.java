@@ -7,8 +7,6 @@
 
 package codeanticode.eliza;
 
-import java.net.URL;
-
 import processing.core.*;
 
 /**
@@ -205,7 +203,7 @@ public class Eliza {
 		
     String[] lines = parent.loadStrings(script);
     if (lines == null || lines.length == 0) {
-      System.err.println("Cannot load default Eliza script!");
+      System.err.println("Cannot load Eliza script!");
       return false;
     } else {
       for (int i = 0; i < lines.length; i++) {
