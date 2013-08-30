@@ -1,4 +1,4 @@
-Eliza is a port as a Processing library of the Java implementation of the Eliza program by Charles Hayden.
+This is a Processing library based on the Java implementation of the Eliza program by Charles Hayden.
 Hayden's code is a complete and faithful implementation of the original program described by by Joseph Weizenbaum in Communications of the ACM in January 1966.
 
 ACKNOWLEDGMENTS
@@ -32,6 +32,7 @@ eliza.readScript(“http://chayden.net/eliza/script");
 
 To go back to the default script that is loaded when Eliza is initialized, call the readDefaultScript() function.
 
+For detailed instructions on how to modify the script file that determines how Eliza constructs the answers, check the following notes by Charles Hayden:  
 http://chayden.net/eliza/instructions.txt
 
 FURTHER REFERENCES
