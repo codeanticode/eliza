@@ -7,6 +7,8 @@
 
 package codeanticode.eliza;
 
+import java.net.URL;
+
 import processing.core.*;
 
 /**
@@ -168,11 +170,13 @@ public class Eliza {
 	public boolean readDefaultScript()	{
 		clearScript();
 
+		URL url = this.getClass().getResource("eliza.script");
+		System.out.println(url);
+		
 		/*
     // Returns the URL of the resource file inside the location in the jar
     // where the class file for Eliza is stored. More info about this here:
-    // http://www.javaworld.com/javaworld/javaqa/2002-11/02-qa-1122-resources.html 
-		URL url = this.getClass().getResource("eliza.script");
+    // http://www.javaworld.com/javaworld/javaqa/2002-11/02-qa-1122-resources.html 		
 		if (url != null)
 		{
 			String[] lines = parent.loadStrings(url.toString());

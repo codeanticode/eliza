@@ -1,4 +1,4 @@
-<project name="ProcessingLibs" default="clean" basedir="../">
+<project name="eliza" default="clean" basedir="../">
 
     
 <!--	
