@@ -13,9 +13,9 @@ INSTRUCTIONS
 
 The library is easy to use. Just import it, and then create an Eliza object:
 
+```java
 import codeanticode.eliza.*;
 
-```java
 Eliza eliza;
 eliza = new Eliza(this);
 
