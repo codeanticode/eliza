@@ -7,7 +7,14 @@
 
 package codeanticode.eliza;
 
-import processing.core.*;
+import org.apache.commons.io.Charsets;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
 
 /**
  *  Eliza main class.
@@ -15,9 +22,7 @@ import processing.core.*;
  *  Does the input transformations.
  */
 public class Eliza {
-  public Eliza(PApplet parent) {
-		this.parent = parent;
-		
+  public Eliza() {
 		readDefaultScript();
   }
 	
@@ -167,81 +172,42 @@ public class Eliza {
 
 	public boolean readDefaultScript()	{
 		clearScript();
-		
-		/*
-    // Returns the URL of the resource file inside the location in the jar
-    // where the class file for Eliza is stored. More info about this here:
-    // http://www.javaworld.com/javaworld/javaqa/2002-11/02-qa-1122-resources.html 		
-		if (url != null)
-		{
-			String[] lines = parent.loadStrings(url.toString());
-			for (int i = 0; i < lines.length; i++) {
-				collect(lines[i]);
-			}			
-		}
-		else System.err.println("Cannot load default Eliza script!");
-		*/
-		
-		/*
-		String[] lines = parent.loadStrings("eliza.script");
-		if (lines.length == 0) {
-		  System.err.println("Cannot load default Eliza script!");
-		  return false;
-		} else {
-	    for (int i = 0; i < lines.length; i++) {
-	      collect(lines[i]);
-	    }
-	    return true;
-		}
-		*/
-		
-		return readScript("eliza.script");
-	}	
+    String resource = "eliza.script";
+    try {
+      InputStream in = getClass().getClassLoader().getResourceAsStream(resource);
+      List<String> lines = IOUtils.readLines(in);
+      if (lines == null || lines.size() == 0) {
+        throw new IllegalArgumentException("could not read script from classpath resource file '" + resource + "'");
+      } else {
+        for (String line : lines) {
+          collect(line);
+        }
+        return true;
+      }
+    } catch (IOException e) {
+      throw new IllegalArgumentException("could not read script from classpath resource file '" + resource + "'");
+    }
+	}
     
 	public boolean readScript(String script) {
 		clearScript();
-		
-    String[] lines = parent.loadStrings(script);
-    if (lines == null || lines.length == 0) {
-      System.err.println("Cannot load Eliza script!");
-      return false;
-    } else {
-      for (int i = 0; i < lines.length; i++) {
-        collect(lines[i]);
+		try {
+      List<String> lines = FileUtils.readLines(new File(script), Charsets.UTF_8);
+      if (lines == null || lines.size() == 0) {
+        System.err.println("Cannot load Eliza script!");
+        return false;
+      } else {
+        for (String line: lines) {
+          collect(line);
+        }
+        return true;
       }
-      return true;
+    } catch (IOException e) {
+      throw new IllegalArgumentException("could not read script from file '" + script + "'");
     }
-
+  }
     
-		/*
-		InputStream stream = parent.openStream(script);
-		if (stream == null) {
-		    System.err.println("The script \"" + script + "\" " +
-		                       "is missing or inaccessible, make sure " +
-		                       "the URL is valid or that the file has been " +
-		                       "added to your sketch and is readable.");
-			return 1;
-		}
-		
-		BufferedReader in = new BufferedReader(new InputStreamReader(stream));
-			
-		String s;	
-	    while (true) {
-			try {
-				s = in.readLine();
-	        } catch (IOException e) {
-				System.err.println("Could not read line from script file.");
-	            return 1;
-	        }
-	        if (s == null) break;
-			collect(s);
-	        if (echoInput) System.out.println(s);
-	    }		
-		
-        if (printData) print();
-        return 0;
-        */
-  }	
+
 	
 	void clearScript() {
 		keys.clear();
@@ -345,9 +311,7 @@ public class Eliza {
         }
         return work;
     }
-    
-    PApplet parent;
-    
+
     final boolean echoInput = false;
     final boolean printData = false;
 
