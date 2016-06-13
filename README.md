@@ -41,3 +41,30 @@ FURTHER REFERENCES
 
 2) Article from the Jul-Aug 1977 issue of the Creative Computing magazine, with a complete listing in Altair BASIC of a version of Eliza by Jeff Schrager: 
 http://vintagecomputer.net/cisc367/Creative%20Computing%20Jul-Aug%201977%20Eliza%20BASIC%20listing.pdf
+
+USAGE with maven
+
+To use this as a maven dependency:
+```
+  <dependency>
+    <groupId>codeanticode</groupId>
+    <artifactId>eliza</artifactId>
+    <version>1.0.1</version>
+  </dependency>
+```
+
+To actually get the artifacts, add this repository to the `<repositories>` block in your `pom.xml`:
+
+``` 
+<repositories>
+  <repository>
+    <id>eliza-repo</id>
+    <url>https://raw.github.com/fkleedorfer/eliza/mvn-repo/</url>
+    <snapshots>
+      <enabled>true</enabled>
+      <updatePolicy>always</updatePolicy>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
